@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">RecyclerViewTest</string>
+    <plurals name="number_of_examples">
+        <item quantity="zero"> no samples</item>
+        <item quantity="one"> %d sample</item>
+        <item quantity="other"> %d samples</item>
+    </plurals>
+    <string name="discovered_text">Mined &lt;b> %1$d &lt;/b> examples in &lt;b> %2$d &lt;/b> clusters</string>
+    <string name="cluster"> Cluster #%1$d </string>
+
+</resources>
