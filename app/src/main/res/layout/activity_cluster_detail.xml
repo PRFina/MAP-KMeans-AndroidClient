@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.clusterDetail.clusterDetailActivity">
+    tools:context=".activities.clusterDetail.ClusterDetailActivity">
 
     <TextView
         android:id="@+id/activity_cluster_detail_txt_cname"

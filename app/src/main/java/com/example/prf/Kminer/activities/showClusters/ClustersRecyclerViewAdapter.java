@@ -1,6 +1,7 @@
 package com.example.prf.Kminer.activities.showClusters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.prf.Kminer.R;
+import com.example.prf.Kminer.activities.clusterDetail.ClusterDetailActivity;
 import com.example.prf.Kminer.models.Cluster;
 import com.example.prf.Kminer.models.ClusterSet;
 
@@ -45,8 +47,8 @@ public class ClustersRecyclerViewAdapter extends RecyclerView.Adapter<ClustersRe
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Cluster cluster = clusters.getCluster(position);
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
+        final Cluster cluster = clusters.getCluster(position);
 
         holder.clusterName.setText("Cluster #" + (position +1));
 
@@ -59,7 +61,10 @@ public class ClustersRecyclerViewAdapter extends RecyclerView.Adapter<ClustersRe
         holder.itemLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "More info soon...", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context, ClusterDetailActivity.class);
+                intent.putExtra("position", position);
+                intent.putExtra("cluster", cluster);
+                context.startActivity(intent);
             }
         });
 
