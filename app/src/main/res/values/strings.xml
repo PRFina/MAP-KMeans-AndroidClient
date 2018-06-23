@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">RecyclerViewTest</string>
+    <string name="app_name">KMiner</string>
     <plurals name="number_of_examples">
         <item quantity="zero"> no samples</item>
         <item quantity="one"> %d sample</item>
@@ -7,5 +7,7 @@
     </plurals>
     <string name="discovered_text">Mined &lt;b> %1$d &lt;/b> examples in &lt;b> %2$d &lt;/b> clusters</string>
     <string name="cluster"> Cluster #%1$d </string>
+    <string name="title_activity_discover">DiscoverActivity</string>
+    <string name="server_address">10.0.2.2</string>
 
 </resources>

@@ -49,7 +49,7 @@ public class MockJsonData {
         try {
             JSONObject o = (JSONObject) new JSONTokener(MockJsonData.jsonData).nextValue();
 
-            cs =  new ClusterSet(o.getJSONArray("clusters").toString());
+            cs =  new ClusterSet(MockJsonData.jsonData);
         } catch (JSONException e) {
             e.printStackTrace();
         }

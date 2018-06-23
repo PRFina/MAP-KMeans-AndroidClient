@@ -17,6 +17,8 @@ import com.example.prf.Kminer.activities.clusterDetail.ClusterDetailActivity;
 import com.example.prf.Kminer.models.Cluster;
 import com.example.prf.Kminer.models.ClusterSet;
 
+import java.io.Serializable;
+
 public class ClustersRecyclerViewAdapter extends RecyclerView.Adapter<ClustersRecyclerViewAdapter.ViewHolder>{
     private static final String TAG = "ClustersRecyclerViewAdapter";
 
@@ -64,6 +66,7 @@ public class ClustersRecyclerViewAdapter extends RecyclerView.Adapter<ClustersRe
                 Intent intent = new Intent(context, ClusterDetailActivity.class);
                 intent.putExtra("position", position);
                 intent.putExtra("cluster", cluster);
+                intent.putExtra("attributes", (Serializable) clusters.getAttributes());
                 context.startActivity(intent);
             }
         });

@@ -20,8 +20,8 @@ public class ShowClustersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_showclusters);
 
-        //TODO retrieve json data
-        ClusterSet clusterSet = MockJsonData.getParsedClusterSet();
+        //TODO retrieve json data from intent
+        ClusterSet clusterSet = (ClusterSet) this.getIntent().getSerializableExtra("clusters");
 
         TextView discoveredTxt = findViewById(R.id.showclusters_txt_discovered);
         discoveredTxt.setText(Html.fromHtml(getString(R.string.discovered_text,clusterSet.getExamplesNumber(), clusterSet.getSize())));
@@ -31,9 +31,9 @@ public class ShowClustersActivity extends AppCompatActivity {
     }
 
 
-    private void initRecyclerView(ClusterSet data){
+    private void initRecyclerView(ClusterSet clusters){
 
-        ClustersRecyclerViewAdapter adapter = new ClustersRecyclerViewAdapter(data, getApplicationContext());
+        ClustersRecyclerViewAdapter adapter = new ClustersRecyclerViewAdapter(clusters, getApplicationContext());
 
         RecyclerView recyclerView = findViewById(R.id.showclusters_recycler_view);
 

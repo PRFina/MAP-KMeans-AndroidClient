@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.prf.Kminer.R;
 import com.example.prf.Kminer.models.Cluster;
+import com.example.prf.Kminer.models.Example;
 
 public class TableExamplesRecyclerAdapter extends RecyclerView.Adapter<TableExamplesRecyclerAdapter.ViewHolder> {
 
@@ -33,8 +34,9 @@ public class TableExamplesRecyclerAdapter extends RecyclerView.Adapter<TableExam
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.example.setText(cluster.getExamples().get(position));
-        holder.distance.setText(String.format("%.2f", cluster.getExamplesDist().get(position)));
+        Example example = cluster.getExamples().get(position);
+        holder.example.setText(example.getJoinedValues());
+        holder.distance.setText(example.getDistance());
     }
 
     @Override

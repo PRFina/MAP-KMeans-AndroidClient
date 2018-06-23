@@ -13,6 +13,8 @@ import com.example.prf.Kminer.R;
 import com.example.prf.Kminer.models.Cluster;
 import com.example.prf.Kminer.models.ClusterSet;
 
+import java.util.List;
+
 public class ClusterDetailActivity extends AppCompatActivity {
 
     @Override
@@ -23,9 +25,7 @@ public class ClusterDetailActivity extends AppCompatActivity {
 
         Intent intent = this.getIntent();
         Cluster cluster = (Cluster) intent.getSerializableExtra("cluster");
-
-        //ClusterSet clusterSet = MockJsonData.getParsedClusterSet();
-
+        List<String> attributes = (List<String>) intent.getSerializableExtra("attributes");
 
 
         //Cluster number text
@@ -35,7 +35,7 @@ public class ClusterDetailActivity extends AppCompatActivity {
         // Header list
         RecyclerView tableHeaderRecyclerView = findViewById(R.id.activity_cluster_detail_recyclerView_tableHeader);
         TableHeaderRecyclerViewAdapter attrAdapter = new TableHeaderRecyclerViewAdapter(getApplicationContext(),
-                MockJsonData.getParsedAttribute(),
+                attributes,
                 cluster.getCentroid());
         tableHeaderRecyclerView.setAdapter(attrAdapter);
 

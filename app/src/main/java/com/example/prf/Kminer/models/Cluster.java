@@ -12,47 +12,36 @@ import java.util.List;
 /**
  * This class model a cluster of data examples.
  * This POJO class has the main responsabilty of model (in MVC point of view)
- *
+ * <p>
  * The "major work" is done in the constructor, which parse a cluster encoded
  * in json string and build the associated object in memory.
  */
-public class Cluster implements Serializable{
+public class Cluster implements Serializable {
     private int nExamples;
     private List<String> centroid;
-    private List<String> examples;
-    private List<Double> examplesDist;
+    private List<Example> examples;
     private double avgDistance;
 
-    Cluster(String jsonString){
-        try {
-            JSONObject cluster = (JSONObject) new JSONTokener(jsonString).nextValue();
+    Cluster(String jsonString) {
+        centroid = new ArrayList<>();
+        examples = new ArrayList<>();
 
-            centroid = new ArrayList<>();
-            JSONArray jCentroid = cluster.getJSONArray("centroid");
-            for (int i = 0; i <  jCentroid.length(); i++) {
+        try {
+            JSONObject jCluster = (JSONObject) new JSONTokener(jsonString).nextValue();
+
+            JSONArray jCentroid = jCluster.getJSONArray("centroid");
+            for (int i = 0; i < jCentroid.length(); i++) {
                 centroid.add(jCentroid.getString(i));
             }
 
-
-
-            avgDistance = cluster.getDouble("avg_distance");
-
-            JSONArray jExamples = cluster.getJSONArray("examples");
-            nExamples = jExamples.length();
-
-            examples = new ArrayList<>();
-            examplesDist = new ArrayList<>();
-            for (int i = 0; i <  nExamples; i++) {
-
-                examples.add(jExamples.getJSONObject(i)
-                        .getJSONArray("values")
-                        .join(", ")
-                        .replace("\"",""));
-
-                examplesDist.add(jExamples.getJSONObject(i)
-                        .getDouble("distance"));
-
+            JSONArray jExamples = jCluster.getJSONArray("examples");
+            for (int i = 0; i < jExamples.length(); i++) {
+                examples.add(new Example(jExamples.getJSONObject(i).toString()));
             }
+            nExamples = examples.size();
+
+            avgDistance = jCluster.getDouble("avg_distance");
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -65,18 +54,15 @@ public class Cluster implements Serializable{
     public String getJoinedCentroid() {
         return android.text.TextUtils.join(", ", centroid);
     }
+
     //TODO return list of string
     public List<String> getCentroid() {
         return centroid;
     }
 
-    public List<String> getExamples() {
+    public List<Example> getExamples() {
         return examples;
     }
-
-    public List<Double> getExamplesDist() { return examplesDist; }
-
-
 
     public double getAvgDistance() {
         return avgDistance;
