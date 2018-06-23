@@ -7,7 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.widget.TextView;
 
-import com.example.prf.Kminer.MockJsonData;
 import com.example.prf.Kminer.R;
 import com.example.prf.Kminer.models.ClusterSet;
 
@@ -20,7 +19,6 @@ public class ShowClustersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_showclusters);
 
-        //TODO retrieve json data from intent
         ClusterSet clusterSet = (ClusterSet) this.getIntent().getSerializableExtra("clusters");
 
         TextView discoveredTxt = findViewById(R.id.showclusters_txt_discovered);
