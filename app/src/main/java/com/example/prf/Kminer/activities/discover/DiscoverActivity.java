@@ -24,7 +24,7 @@ public class DiscoverActivity extends AppCompatActivity {
         mineBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FetchDiscoverDataAsyncTask task =new FetchDiscoverDataAsyncTask(getApplicationContext());
+                FetchDiscoverDataAsyncTask task =new FetchDiscoverDataAsyncTask(DiscoverActivity.this);
 
                 task.execute(tableTxt.getText().toString(), clustersTxt.getText().toString());
             }

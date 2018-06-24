@@ -33,7 +33,7 @@ public class ClustersActivity extends AppCompatActivity {
 
     private void initRecyclerView(ClusterSet clusters){
 
-        ClustersRecyclerViewAdapter adapter = new ClustersRecyclerViewAdapter(clusters, getApplicationContext());
+        ClustersRecyclerViewAdapter adapter = new ClustersRecyclerViewAdapter(clusters, this);
 
         RecyclerView recyclerView = findViewById(R.id.showclusters_recycler_view);
 
