@@ -1,4 +1,4 @@
-package com.example.prf.Kminer.activities.clusterDetail;
+package com.example.prf.Kminer.activities.clusterInfo;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -32,7 +32,7 @@ public class TableHeaderRecyclerViewAdapter extends RecyclerView.Adapter<TableHe
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.activity_cluster_detail_item, parent, false);
+                .inflate(R.layout.activity_cluster_header_item, parent, false);
         TableHeaderRecyclerViewAdapter.ViewHolder holder = new TableHeaderRecyclerViewAdapter.ViewHolder(view);
 
         return holder;

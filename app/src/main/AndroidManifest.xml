@@ -13,8 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.showClusters.ShowClustersActivity" />
-        <activity android:name=".activities.clusterDetail.ClusterDetailActivity" />
+        <activity android:name=".activities.clusters.ClustersActivity"
+            android:parentActivityName=".activities.discover.DiscoverActivity"/>
+
+        <activity android:name=".activities.clusterInfo.ClusterInfoActivity" />
         <activity android:name=".activities.discover.DiscoverActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

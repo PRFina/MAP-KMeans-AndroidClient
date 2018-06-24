@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 
-import com.example.prf.Kminer.activities.showClusters.ShowClustersActivity;
+import com.example.prf.Kminer.activities.clusters.ClustersActivity;
 import com.example.prf.Kminer.models.ClusterSet;
 
 
@@ -25,7 +25,7 @@ public class ParseJsonAsyncTask extends AsyncTask<String, Void, ClusterSet> {
     protected void onPostExecute(ClusterSet clusterSet) {
         super.onPostExecute(clusterSet);
 
-        Intent intent = new Intent(context, ShowClustersActivity.class);
+        Intent intent = new Intent(context, ClustersActivity.class);
         intent.putExtra("clusters", clusterSet);
         context.startActivity(intent);
     }

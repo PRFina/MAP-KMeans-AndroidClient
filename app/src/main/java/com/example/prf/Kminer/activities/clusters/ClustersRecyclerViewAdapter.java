@@ -1,4 +1,4 @@
-package com.example.prf.Kminer.activities.showClusters;
+package com.example.prf.Kminer.activities.clusters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,10 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.prf.Kminer.R;
-import com.example.prf.Kminer.activities.clusterDetail.ClusterDetailActivity;
+import com.example.prf.Kminer.activities.clusterInfo.ClusterInfoActivity;
 import com.example.prf.Kminer.models.Cluster;
 import com.example.prf.Kminer.models.ClusterSet;
 
@@ -42,7 +41,7 @@ public class ClustersRecyclerViewAdapter extends RecyclerView.Adapter<ClustersRe
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.activity_showclusters_item, parent, false);
+                .inflate(R.layout.activity_clusters_item, parent, false);
         ViewHolder holder = new ViewHolder(view);
 
         return holder;
@@ -63,7 +62,7 @@ public class ClustersRecyclerViewAdapter extends RecyclerView.Adapter<ClustersRe
         holder.itemLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, ClusterDetailActivity.class);
+                Intent intent = new Intent(context, ClusterInfoActivity.class);
                 intent.putExtra("position", position);
                 intent.putExtra("cluster", cluster);
                 intent.putExtra("attributes", (Serializable) clusters.getAttributes());

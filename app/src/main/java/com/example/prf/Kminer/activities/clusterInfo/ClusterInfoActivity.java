@@ -1,4 +1,4 @@
-package com.example.prf.Kminer.activities.clusterDetail;
+package com.example.prf.Kminer.activities.clusterInfo;
 
 
 import android.content.Intent;
@@ -14,12 +14,12 @@ import com.example.prf.Kminer.models.Cluster;
 import java.util.Collections;
 import java.util.List;
 
-public class ClusterDetailActivity extends AppCompatActivity {
+public class ClusterInfoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cluster_detail);
+        setContentView(R.layout.activity_cluster);
 
 
         Intent intent = this.getIntent();

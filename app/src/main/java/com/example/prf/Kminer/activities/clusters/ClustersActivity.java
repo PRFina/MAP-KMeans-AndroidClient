@@ -1,4 +1,4 @@
-package com.example.prf.Kminer.activities.showClusters;
+package com.example.prf.Kminer.activities.clusters;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,14 +10,14 @@ import android.widget.TextView;
 import com.example.prf.Kminer.R;
 import com.example.prf.Kminer.models.ClusterSet;
 
-public class ShowClustersActivity extends AppCompatActivity {
+public class ClustersActivity extends AppCompatActivity {
 
-    private static final String TAG = "ShowClustersActivity";
+    private static final String TAG = "ClustersActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_showclusters);
+        setContentView(R.layout.activity_clusters);
 
         ClusterSet clusterSet = (ClusterSet) this.getIntent().getSerializableExtra("clusters");
 
@@ -25,6 +25,8 @@ public class ShowClustersActivity extends AppCompatActivity {
         discoveredTxt.setText(Html.fromHtml(getString(R.string.discovered_text,clusterSet.getExamplesNumber(), clusterSet.getSize())));
 
         initRecyclerView(clusterSet);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
 
