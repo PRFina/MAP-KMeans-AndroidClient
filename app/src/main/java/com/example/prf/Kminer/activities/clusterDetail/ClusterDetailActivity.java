@@ -7,12 +7,11 @@ import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
-
-import com.example.prf.Kminer.MockJsonData;
 import com.example.prf.Kminer.R;
 import com.example.prf.Kminer.models.Cluster;
-import com.example.prf.Kminer.models.ClusterSet;
 
+
+import java.util.Collections;
 import java.util.List;
 
 public class ClusterDetailActivity extends AppCompatActivity {
@@ -40,6 +39,7 @@ public class ClusterDetailActivity extends AppCompatActivity {
         tableHeaderRecyclerView.setAdapter(attrAdapter);
 
         // Examples list
+        Collections.sort(cluster.getExamples());
         RecyclerView tableExamplesRecyclerView = findViewById(R.id.activity_cluster_detail_recyclerView_tableExamples);
         TableExamplesRecyclerAdapter examplesAdapter = new TableExamplesRecyclerAdapter(getApplicationContext(),
                 cluster);

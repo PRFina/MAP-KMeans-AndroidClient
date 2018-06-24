@@ -1,5 +1,7 @@
 package com.example.prf.Kminer.models;
 
+import android.support.annotation.NonNull;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -9,7 +11,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Example implements Serializable{
+public class Example implements Serializable, Comparable<Example>{
     String distance;
     List<String> values;
 
@@ -37,5 +39,10 @@ public class Example implements Serializable{
 
     public String getJoinedValues() {
         return android.text.TextUtils.join(", ", values);
+    }
+
+    @Override
+    public int compareTo(@NonNull Example example) {
+        return distance.compareTo(example.distance);
     }
 }
