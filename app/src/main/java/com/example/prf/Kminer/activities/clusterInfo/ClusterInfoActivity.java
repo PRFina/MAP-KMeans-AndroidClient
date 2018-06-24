@@ -33,7 +33,7 @@ public class ClusterInfoActivity extends AppCompatActivity {
 
         // Header list
         RecyclerView tableHeaderRecyclerView = findViewById(R.id.activity_cluster_detail_recyclerView_tableHeader);
-        TableHeaderRecyclerViewAdapter attrAdapter = new TableHeaderRecyclerViewAdapter(getApplicationContext(),
+        TableHeaderRecyclerViewAdapter attrAdapter = new TableHeaderRecyclerViewAdapter(this,
                 attributes,
                 cluster.getCentroid());
         tableHeaderRecyclerView.setAdapter(attrAdapter);
@@ -41,7 +41,7 @@ public class ClusterInfoActivity extends AppCompatActivity {
         // Examples list
         Collections.sort(cluster.getExamples());
         RecyclerView tableExamplesRecyclerView = findViewById(R.id.activity_cluster_detail_recyclerView_tableExamples);
-        TableExamplesRecyclerAdapter examplesAdapter = new TableExamplesRecyclerAdapter(getApplicationContext(),
+        TableExamplesRecyclerAdapter examplesAdapter = new TableExamplesRecyclerAdapter(this,
                 cluster);
         tableExamplesRecyclerView.setAdapter(examplesAdapter);
 
