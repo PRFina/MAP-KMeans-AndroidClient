@@ -13,7 +13,7 @@
         tools:context="com.example.prf.Kminer.activities.discover.ReadActivity">
 
         <EditText
-            android:id="@+id/activity_read_txt_table"
+            android:id="@+id/fragment_read_txt_table"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -29,7 +29,7 @@
 
         <EditText
 
-            android:id="@+id/activity_read_txt_clusters"
+            android:id="@+id/fragment_read_txt_clusters"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -40,13 +40,13 @@
             android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/activity_read_txt_table">
+            app:layout_constraintTop_toBottomOf="@+id/fragment_read_txt_table">
         </EditText>
 
 
 
         <Button
-            android:id="@+id/activity_read_btn_read"
+            android:id="@+id/fragment_read_btn_read"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -55,7 +55,7 @@
             android:text="Read Data"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/activity_read_txt_clusters" />
+            app:layout_constraintTop_toBottomOf="@+id/fragment_read_txt_clusters" />
     </android.support.constraint.ConstraintLayout>
 
 </FrameLayout>

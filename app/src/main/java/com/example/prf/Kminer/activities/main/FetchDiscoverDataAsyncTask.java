@@ -1,11 +1,10 @@
-package com.example.prf.Kminer.activities.discover;
+package com.example.prf.Kminer.activities.main;
 
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
 import com.example.prf.Kminer.R;
-import com.example.prf.Kminer.models.ClusterSet;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -29,23 +28,27 @@ class FetchDiscoverDataAsyncTask extends AsyncTask<String, Void, String> {
 
     @Override
     protected String doInBackground(String... strings) {
-
-
+        String serverAddress = context.getResources().getString(R.string.server_address);
         String jsonString = "";
-        String address = context.getResources()
-                .getString(R.string.server_address);
-
+        RequestMessage req = null;
 
         try (
-                Socket socket = new Socket(address, 9999);
+                Socket socket = new Socket(serverAddress, 9999);
                 ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
                 ObjectInputStream in = new ObjectInputStream(socket.getInputStream())
         ) {
 
 
-            RequestMessage req = new RequestMessage(MessageType.DISCOVER);
-            req.addBodyField("table", strings[0]);
-            req.addBodyField("clusters", strings[1]);
+
+            if("DISCOVER".equals(strings[0])){
+                req = new RequestMessage(MessageType.DISCOVER);
+            }
+            else if("READ".equals(strings[0])) {
+                req = new RequestMessage(MessageType.READ);
+            }
+
+            req.addBodyField("table", strings[1]);
+            req.addBodyField("clusters", strings[2]);
             req.addBodyField("sendJson", "true");
 
             out.writeObject(req);
