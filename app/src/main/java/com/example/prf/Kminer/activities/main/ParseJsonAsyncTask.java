@@ -1,4 +1,4 @@
-package com.example.prf.Kminer.activities.discover;
+package com.example.prf.Kminer.activities.main;
 
 import android.content.Context;
 import android.content.Intent;
