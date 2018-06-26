@@ -15,7 +15,7 @@
         android:layout_marginTop="10dp"
         android:adjustViewBounds="false"
         android:contentDescription="cluster image"
-        android:src="@drawable/cluster"
+        android:src="@drawable/icona_cluster"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/icona_cluster" />
