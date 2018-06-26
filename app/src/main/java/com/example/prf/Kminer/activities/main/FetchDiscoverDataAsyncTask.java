@@ -37,15 +37,7 @@ class FetchDiscoverDataAsyncTask extends AsyncTask<String, Void, String> {
                 ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
                 ObjectInputStream in = new ObjectInputStream(socket.getInputStream())
         ) {
-
-
-
-            if("DISCOVER".equals(strings[0])){
-                req = new RequestMessage(MessageType.DISCOVER);
-            }
-            else if("READ".equals(strings[0])) {
-                req = new RequestMessage(MessageType.READ);
-            }
+            req = new RequestMessage(MessageType.valueOf(strings[0])); //Get MessageType enum value from parameter
 
             req.addBodyField("table", strings[1]);
             req.addBodyField("clusters", strings[2]);

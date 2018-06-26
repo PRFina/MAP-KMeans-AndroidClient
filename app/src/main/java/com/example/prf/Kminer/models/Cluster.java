@@ -52,7 +52,7 @@ public class Cluster implements Serializable {
     }
 
     public String getJoinedCentroid() {
-        return android.text.TextUtils.join(", ", centroid);
+        return android.text.TextUtils.join("  ", centroid);
     }
 
     //TODO return list of string

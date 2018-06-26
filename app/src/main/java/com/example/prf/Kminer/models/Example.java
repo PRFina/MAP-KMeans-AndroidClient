@@ -38,7 +38,7 @@ public class Example implements Serializable, Comparable<Example>{
     }
 
     public String getJoinedValues() {
-        return android.text.TextUtils.join(", ", values);
+        return android.text.TextUtils.join("  ", values);
     }
 
     @Override
