@@ -2,7 +2,9 @@ package com.example.prf.Kminer.activities.main;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.support.design.widget.Snackbar;
 import android.util.Log;
+import android.view.View;
 
 import com.example.prf.Kminer.R;
 
@@ -15,22 +17,32 @@ import protocol.MessageType;
 import protocol.RequestMessage;
 import protocol.ResponseMessage;
 
+/**
+ * This class execute an async task to retrieve data from server.
+ *
+ * This class use RequestMessage and ResponseMessage to communicate with server
+ *
+ * In a chainable way, the onPostExecute method call another Async tack to parse the json response
+ *
+ */
 
-class FetchDiscoverDataAsyncTask extends AsyncTask<String, Void, String> {
+class FetchDataAsyncTask extends AsyncTask<String, Void, ResponseMessage> {
     private static final String TAG = "FetchDiscoverAsyncTask";
 
-    Context context;
+    private Context context;
+    private View rootView;
 
-    public FetchDiscoverDataAsyncTask(Context context) {
+    public FetchDataAsyncTask(Context context, View rootView) {
         this.context = context;
+        this.rootView = rootView;
     }
 
-
     @Override
-    protected String doInBackground(String... strings) {
-        String serverAddress = context.getResources().getString(R.string.server_address);
-        String jsonString = "";
-        RequestMessage req = null;
+    protected ResponseMessage doInBackground(String... strings) {
+        String serverAddress = context.getString(R.string.server_address); //TODO replace with app config
+
+        RequestMessage req;
+        ResponseMessage resp = null;
 
         try (
                 Socket socket = new Socket(serverAddress, 9999);
@@ -45,30 +57,27 @@ class FetchDiscoverDataAsyncTask extends AsyncTask<String, Void, String> {
 
             out.writeObject(req);
 
-            ResponseMessage resp = (ResponseMessage) in.readObject();
-
-            if (resp.getStatus().equals("OK")) {
-                jsonString = resp.getBodyField("data");
-            }
+            resp = (ResponseMessage) in.readObject();
 
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
 
-        return jsonString;
+        return resp;
     }
 
     @Override
-    protected void onPostExecute(String result) {
+    protected void onPostExecute(ResponseMessage result) {
         super.onPostExecute(result);
 
-        Log.d(TAG, result);
 
-        if (result.isEmpty()) {
+        if (result.getStatus().equals("OK")) {
+            new ParseJsonAsyncTask(context).execute(result.getBodyField("data"));
+            Log.d(TAG, result.getBodyField("data"));
 
-            //TODO SHOW error
         } else {
-            new ParseJsonAsyncTask(context).execute(result);
+            Snackbar.make(rootView, result.getBodyField("errorMsg"),Snackbar.LENGTH_LONG).show();
+            Log.d(TAG, result.getBodyField("errorMsg"));
         }
 
     }
