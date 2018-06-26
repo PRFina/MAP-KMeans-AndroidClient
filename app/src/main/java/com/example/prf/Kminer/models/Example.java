@@ -26,7 +26,7 @@ public class Example implements Serializable, Comparable<Example>{
             values.add(jValues.getString(i));
         }
 
-        distance = String.format("%.2f", jExample.getDouble("distance"));
+        distance = String.format(java.util.Locale.US,"%.2f", jExample.getDouble("distance"));
     }
 
     public String getDistance() {

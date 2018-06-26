@@ -13,6 +13,7 @@ import com.example.prf.Kminer.models.Cluster;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 
 public class ClusterInfoActivity extends AppCompatActivity {
 
@@ -47,7 +48,7 @@ public class ClusterInfoActivity extends AppCompatActivity {
 
         // Avg distance text
         TextView avgDistance = findViewById(R.id.activity_cluster_detail_txt_avgDistance);
-        avgDistance.setText( String.format("%.2f", cluster.getAvgDistance()) );
+        avgDistance.setText( String.format(Locale.US,"%.2f", cluster.getAvgDistance()) );
 
     }
 }
