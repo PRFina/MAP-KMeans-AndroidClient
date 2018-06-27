@@ -59,7 +59,7 @@
         android:layout_marginTop="5dp"
         android:text="Centroid:"
         android:textSize="16sp"
-        android:textStyle="italic"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/activity_cluster_detail_recyclerView_tableHeader"
         app:layout_constraintStart_toEndOf="@+id/guideline7"
         app:layout_constraintTop_toTopOf="@+id/guideline6" />
@@ -85,7 +85,7 @@
         android:layout_marginTop="10dp"
         android:text="Samples:"
         android:textSize="16sp"
-        android:textStyle="italic"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toTopOf="@+id/guideline9" />
 
@@ -97,7 +97,7 @@
         android:layout_marginTop="5dp"
         android:text="Attribute Values"
         android:textSize="12sp"
-        android:textStyle="bold"
+        android:textStyle="italic"
         app:layout_constraintStart_toEndOf="@+id/guideline7"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -108,7 +108,7 @@
         android:layout_marginEnd="15dp"
         android:text="Distance"
         android:textSize="12sp"
-        android:textStyle="bold"
+        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
