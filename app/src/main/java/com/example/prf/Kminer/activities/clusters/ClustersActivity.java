@@ -22,11 +22,14 @@ public class ClustersActivity extends AppCompatActivity {
         ClusterSet clusterSet = (ClusterSet) this.getIntent().getSerializableExtra("clusters");
 
         TextView discoveredTxt = findViewById(R.id.showclusters_txt_discovered);
-        discoveredTxt.setText(Html.fromHtml(getString(R.string.discovered_text,clusterSet.getExamplesNumber(), clusterSet.getSize())));
+        discoveredTxt.setText(Html.fromHtml(getString(R.string.discovered_text, clusterSet.getExamplesNumber(), clusterSet.getSize())));
 
         initRecyclerView(clusterSet);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(R.string.title_actionBar_clusters);
+
+
 
     }
 

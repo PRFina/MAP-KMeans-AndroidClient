@@ -22,6 +22,9 @@ public class ClusterInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cluster);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(R.string.title_actionBar_clusterInfo);
+
 
         Intent intent = this.getIntent();
         Cluster cluster = (Cluster) intent.getSerializableExtra("cluster");

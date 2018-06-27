@@ -41,10 +41,10 @@ public class MainActivity extends FragmentActivity {
     }
 
     /**
-     * Helper method where instantiate the fragments for the tab layout
+     * Helper method where instantiate the fragments for the tabPageAdapter
      */
     private Fragment[] getFragments() {
-        // Add nefragments here
+        // Add fragments here
         Fragment[] fragmentsArray = new Fragment[]{
                 new DiscoverFragment(),
                 new ReadFragment()
