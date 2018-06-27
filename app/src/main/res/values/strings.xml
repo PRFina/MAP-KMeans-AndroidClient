@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">KMiner</string>
+    <string name="app_name">K-Miner</string>
     <plurals name="number_of_examples">
         <item quantity="zero"> no samples</item>
         <item quantity="one"> %d sample</item>

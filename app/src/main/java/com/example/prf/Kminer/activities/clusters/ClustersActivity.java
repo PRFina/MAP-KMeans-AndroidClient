@@ -26,7 +26,7 @@ public class ClustersActivity extends AppCompatActivity {
 
         initRecyclerView(clusterSet);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         getSupportActionBar().setTitle(R.string.title_actionBar_clusters);
 
 
