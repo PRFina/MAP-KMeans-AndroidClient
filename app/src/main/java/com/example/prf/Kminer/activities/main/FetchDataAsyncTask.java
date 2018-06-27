@@ -70,14 +70,18 @@ class FetchDataAsyncTask extends AsyncTask<String, Void, ResponseMessage> {
     protected void onPostExecute(ResponseMessage result) {
         super.onPostExecute(result);
 
+        if(result != null) {
+            if (result.getStatus().equals("OK")) {
+                new ParseJsonAsyncTask(context).execute(result.getBodyField("data"));
+                Log.d(TAG, result.getBodyField("data"));
 
-        if (result.getStatus().equals("OK")) {
-            new ParseJsonAsyncTask(context).execute(result.getBodyField("data"));
-            Log.d(TAG, result.getBodyField("data"));
-
-        } else {
-            Snackbar.make(rootView, result.getBodyField("errorMsg"),Snackbar.LENGTH_LONG).show();
-            Log.d(TAG, result.getBodyField("errorMsg"));
+            } else {
+                Snackbar.make(rootView, result.getBodyField("errorMsg"),Snackbar.LENGTH_LONG).show();
+                Log.d(TAG, result.getBodyField("errorMsg"));
+            }
+        }
+        else{
+            Snackbar.make(rootView, "Sorry, can't find any data. Try later!iris",Snackbar.LENGTH_LONG).show();
         }
 
     }
