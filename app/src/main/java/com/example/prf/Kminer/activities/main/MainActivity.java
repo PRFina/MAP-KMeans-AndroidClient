@@ -1,6 +1,7 @@
 package com.example.prf.Kminer.activities.main;
 
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,13 @@ import android.os.Bundle;
 
 import com.example.prf.Kminer.R;
 
+import java.util.List;
+
+/**
+ * This is the Kminer's main activity.
+ *
+ * The logic is delegated to the relate Fragments
+ */
 public class MainActivity extends FragmentActivity {
 
     private ViewPager pager;
@@ -17,9 +25,12 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        pager = findViewById(R.id.activity_main_pager);
 
-        TabPageAdapter adapter = new TabPageAdapter(getSupportFragmentManager());
+        TabPageAdapter adapter = new TabPageAdapter(getSupportFragmentManager(),
+                getFragments(),
+                new String[] {"Discover","Read"});
+
+        pager = findViewById(R.id.activity_main_pager);
         pager.setAdapter(adapter);
 
         TabLayout tabLayout = findViewById(R.id.activity_main_tabs);
@@ -27,5 +38,18 @@ public class MainActivity extends FragmentActivity {
 
 
 
+    }
+
+    /**
+     * Helper method where instantiate the fragments for the tab layout
+     */
+    private Fragment[] getFragments() {
+        // Add nefragments here
+        Fragment[] fragmentsArray = new Fragment[]{
+                new DiscoverFragment(),
+                new ReadFragment()
+        };
+
+        return fragmentsArray;
     }
 }

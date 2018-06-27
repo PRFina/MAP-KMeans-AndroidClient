@@ -6,50 +6,29 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 public class TabPageAdapter extends FragmentPagerAdapter {
+    private final String[] pagesTitles;
+    private final Fragment[] fragments;
 
-    TabPageAdapter(FragmentManager fragMng) {
-        super(fragMng);
+    TabPageAdapter(FragmentManager fragmentManager, Fragment[] fragments, String[] pagesTitles) {
+        super(fragmentManager);
+        this.pagesTitles = pagesTitles;
+        this.fragments = fragments;
     }
 
     @Override
     public Fragment getItem(int position) {
-        Fragment fragment = null;
-        switch (position){
-            case 0: {
-                fragment = new DiscoverFragment();
-                break;
-            }
-            case 1: {
-                fragment = new ReadFragment();
-                break;
-            }
-        }
-
-        return fragment;
+        return fragments[position];
     }
 
     @Override
     public int getCount() {
-        return 2;
+        return pagesTitles.length;
     }
 
 
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-        String title="";
-
-        switch (position){
-            case 0: {
-                title = "Discover";
-                break;
-            }
-            case 1: {
-                title = "Read";
-                break;
-            }
-        }
-
-        return title;
+        return pagesTitles[position];
     }
 }
