@@ -40,6 +40,7 @@ public class ClusterInfoActivity extends AppCompatActivity {
         TableHeaderRecyclerViewAdapter attrAdapter = new TableHeaderRecyclerViewAdapter(this,
                 attributes,
                 cluster.getCentroid());
+        tableHeaderRecyclerView.setHasFixedSize(true);
         tableHeaderRecyclerView.setAdapter(attrAdapter);
 
         // Examples list
@@ -47,6 +48,7 @@ public class ClusterInfoActivity extends AppCompatActivity {
         RecyclerView tableExamplesRecyclerView = findViewById(R.id.activity_cluster_detail_recyclerView_tableExamples);
         TableExamplesRecyclerAdapter examplesAdapter = new TableExamplesRecyclerAdapter(this,
                 cluster);
+        tableExamplesRecyclerView.setHasFixedSize(true);
         tableExamplesRecyclerView.setAdapter(examplesAdapter);
 
         // Avg distance text
