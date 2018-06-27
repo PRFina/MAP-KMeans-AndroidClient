@@ -16,9 +16,14 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_main">ActivityMain</string>
 
-
+    <!-- Action Bar -->
     <string name="title_actionBar_clusters">Clusters</string>
     <string name="title_actionBar_clusterInfo">Cluster Stats</string>
+
+    <!-- Errors -->
+    <string name="error_noNetwork"> You are not connected to any network, please connect to</string>
+
+
 
 
 </resources>
