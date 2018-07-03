@@ -18,7 +18,7 @@ import com.example.prf.Kminer.models.ClusterSet;
 
 import java.io.Serializable;
 
-public class ClustersRecyclerViewAdapter extends RecyclerView.Adapter<ClustersRecyclerViewAdapter.ViewHolder>{
+public final class ClustersRecyclerViewAdapter extends RecyclerView.Adapter<ClustersRecyclerViewAdapter.ViewHolder>{
     private static final String TAG = "ClustersRecyclerViewAdapter";
 
     private ClusterSet clusters;

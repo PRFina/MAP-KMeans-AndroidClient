@@ -81,7 +81,7 @@ class FetchDataAsyncTask extends AsyncTask<String, Void, ResponseMessage> {
             }
         }
         else{
-            Snackbar.make(rootView, "Sorry, can't find any data. Try later!",Snackbar.LENGTH_LONG).show();
+            Snackbar.make(rootView, "Sorry, can't retrieve data from server. Try later!",Snackbar.LENGTH_LONG).show();
         }
 
     }
