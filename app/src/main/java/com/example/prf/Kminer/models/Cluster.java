@@ -50,7 +50,6 @@ public class Cluster implements Serializable {
                 examples.add(new Example(jExamples.getJSONObject(i).toString()));
             }
 
-
             avgDistance = jCluster.getDouble("avg_distance");
 
         } catch (JSONException e) {
