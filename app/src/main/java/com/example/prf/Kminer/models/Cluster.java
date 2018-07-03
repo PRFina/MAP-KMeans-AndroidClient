@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This class model a cluster of data examples. In this context,
- * a cluster contains:
+ * This class models a collection of data {@link com.example.prf.Kminer.models.Example}.
+ * In this context,a cluster contains:
  * <ul>
  *     <li> A list of data examples <li>
  *     <li> The cluster's centroid</li>
@@ -75,14 +75,26 @@ public class Cluster implements Serializable {
         return android.text.TextUtils.join("  ", centroid);
     }
 
+    /**
+     *
+     * @return the centroid values
+     */
     public List<String> getCentroid() {
         return centroid;
     }
 
+    /**
+     *
+     * @return the cluster' examples
+     */
     public List<Example> getExamples() {
         return examples;
     }
 
+    /**
+     *
+     * @return the average distance from the centroid
+     */
     public double getAvgDistance() {
         return avgDistance;
     }
