@@ -24,8 +24,8 @@ import java.util.Objects;
  *
  */
 public class Example implements Serializable, Comparable<Example>{
-    String distance;
-    List<String> values;
+    private String distance;
+    private List<String> values;
 
     /**
      * Constructs a new example instance from a json string.
