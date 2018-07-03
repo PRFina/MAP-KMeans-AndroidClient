@@ -10,10 +10,13 @@ import org.json.JSONTokener;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Example implements Serializable, Comparable<Example>{
     String distance;
     List<String> values;
+
+
 
     Example(String jsonString) throws JSONException {
 
@@ -44,5 +47,19 @@ public class Example implements Serializable, Comparable<Example>{
     @Override
     public int compareTo(@NonNull Example example) {
         return distance.compareTo(example.distance);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Example example = (Example) o;
+        return Objects.equals(distance, example.distance);
+    }
+
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(distance);
     }
 }
