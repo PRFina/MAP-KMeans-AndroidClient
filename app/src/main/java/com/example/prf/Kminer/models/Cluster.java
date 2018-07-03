@@ -10,18 +10,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This class model a cluster of data examples.
- * This POJO class has the main responsabilty of model (in MVC point of view)
- * <p>
- * The "major work" is done in the constructor, which parse a cluster encoded
- * in json string and build the associated object in memory.
+ * This class model a cluster of data examples. In this context,
+ * a cluster contains:
+ * <ul>
+ *     <li> A list of data examples <li>
+ *     <li> The cluster's centroid</li>
+ *     <li> Some metrics about examples-centroid distance</li>
+ * </ul>
+ *
+ * From a MVC stand point, this class has the Model role.
+ *
  */
 public class Cluster implements Serializable {
-    private int nExamples;
     private List<String> centroid;
     private List<Example> examples;
     private double avgDistance;
 
+    /**
+     * Constructs a new cluster instance from a json string.
+     * The json string must contains <b>one, and only one</b>
+     * cluster to be parsed correctly.
+     *
+     * @param jsonString cluster json encoded string
+     */
     Cluster(String jsonString) {
         centroid = new ArrayList<>();
         examples = new ArrayList<>();
@@ -38,7 +49,7 @@ public class Cluster implements Serializable {
             for (int i = 0; i < jExamples.length(); i++) {
                 examples.add(new Example(jExamples.getJSONObject(i).toString()));
             }
-            nExamples = examples.size();
+
 
             avgDistance = jCluster.getDouble("avg_distance");
 
@@ -47,15 +58,23 @@ public class Cluster implements Serializable {
         }
     }
 
+    /**
+     * Get the cluster size (in O(1) time)
+     * @return number of data examples in the current cluster
+     */
     public int getSize() {
-        return nExamples;
+        return examples.size();
     }
 
+    /**
+     * Utility method to retrieve centroid values as unique string.
+     * The centroid values are joined by a comma.
+     * @return a comma separated value string of the centroid values
+     */
     public String getJoinedCentroid() {
         return android.text.TextUtils.join("  ", centroid);
     }
 
-    //TODO return list of string
     public List<String> getCentroid() {
         return centroid;
     }
