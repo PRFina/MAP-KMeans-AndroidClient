@@ -4,7 +4,6 @@ import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -13,7 +12,6 @@ import android.util.Log;
 
 import com.example.prf.Kminer.R;
 
-import java.util.List;
 
 /**
  * This is the Kminer's main activity.

@@ -39,13 +39,14 @@ class FetchDataAsyncTask extends AsyncTask<String, Void, ResponseMessage> {
 
     @Override
     protected ResponseMessage doInBackground(String... strings) {
-        String serverAddress = context.getString(R.string.server_address); //TODO replace with app config
+        String serverAddress = context.getString(R.string.server_address);
+        int serverPort = Integer.parseInt(context.getString(R.string.server_port));
 
         RequestMessage req;
         ResponseMessage resp = null;
 
         try (
-                Socket socket = new Socket(serverAddress, 9999);
+                Socket socket = new Socket(serverAddress, serverPort);
                 ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
                 ObjectInputStream in = new ObjectInputStream(socket.getInputStream())
         ) {
