@@ -22,7 +22,7 @@ import protocol.ResponseMessage;
  *
  * This class use RequestMessage and ResponseMessage to communicate with server
  *
- * In a chainable way, the onPostExecute method call another Async tack to parse the json response
+ * In a "chainable way", the onPostExecute method call another Async tack to parse the json response
  *
  */
 

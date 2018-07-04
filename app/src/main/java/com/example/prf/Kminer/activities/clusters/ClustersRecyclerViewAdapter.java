@@ -18,17 +18,25 @@ import com.example.prf.Kminer.models.ClusterSet;
 
 import java.io.Serializable;
 
+/**
+ * Class that extends and implement the RecyclerView adapter.
+ * This class helps to bind {@link com.example.prf.Kminer.models.ClusterSet}
+ * model to the inflated UI list provided by RecyclerView.
+ *<p>
+ * For each item in the clusters' list, an OnClickListener is attached to it, so
+ * when user click on it new
+ * {@link com.example.prf.Kminer.activities.clusterInfo.ClusterInfoActivity}
+ * will be started with an intent that contains as bundle a single
+ * {@link com.example.prf.Kminer.models.Cluster} instance.
+ *</p>
+ */
 public final class ClustersRecyclerViewAdapter extends RecyclerView.Adapter<ClustersRecyclerViewAdapter.ViewHolder>{
     private static final String TAG = "ClustersRecyclerViewAdapter";
 
     private ClusterSet clusters;
-    private Resources resources;
     private Context context;
 
 
-    /*
-    TODO the json parsed data should be injected here
-     */
     public ClustersRecyclerViewAdapter(ClusterSet clusters, Context ctx) {
         this.clusters = clusters;
         context = ctx;
@@ -56,7 +64,6 @@ public final class ClustersRecyclerViewAdapter extends RecyclerView.Adapter<Clus
         int size = cluster.getSize();
         holder.examples.setText(context.getResources()
                 .getQuantityString( R.plurals.number_of_examples, size, size));
-
         holder.centroid.setText(cluster.getJoinedCentroid());
 
         holder.itemLayout.setOnClickListener(new View.OnClickListener() {
@@ -69,8 +76,6 @@ public final class ClustersRecyclerViewAdapter extends RecyclerView.Adapter<Clus
                 context.startActivity(intent);
             }
         });
-
-
     }
 
     @Override
@@ -81,7 +86,7 @@ public final class ClustersRecyclerViewAdapter extends RecyclerView.Adapter<Clus
 
     /*
     The ui field declared in the layout, should be retrieved here,
-    only the ones that should be modified dynamically( ui view that
+    only the ones that should be modified dynamically (ui views that
     should be accessed in onBindViewHolder method)
      */
     public class ViewHolder extends RecyclerView.ViewHolder {
