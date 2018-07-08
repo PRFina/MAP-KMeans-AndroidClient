@@ -11,9 +11,9 @@ import com.example.prf.Kminer.R;
 import com.example.prf.Kminer.models.ClusterSet;
 
 /**
- * Activity for showing the cluster-set.
+ * Activity for showing the cluster-set content as list.
  *
- * This activity show a list of clusters using a RecyclerView.
+ * This activity show a list of clusters using a RecyclerView and a custom adapter.
  * This activity must receive a {@link com.example.prf.Kminer.models.ClusterSet}
  * instance in the incoming intent Bundle
  */
@@ -31,12 +31,14 @@ public class ClustersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clusters);
 
+        //Retrieve clusterSet insyance from incoming intent
         ClusterSet clusterSet = (ClusterSet) this.getIntent().getSerializableExtra("clusters");
-        TextView discoveredTxt = findViewById(R.id.showclusters_txt_discovered);
 
+        //UI setup
+        TextView discoveredTxt = findViewById(R.id.showclusters_txt_discovered);
         if(clusterSet != null) {
-           discoveredTxt.setText(Html.fromHtml(getString(R.string.discovered_text, clusterSet.getExamplesNumber(), clusterSet.getSize())));
-           initRecyclerView(clusterSet);
+            discoveredTxt.setText(Html.fromHtml(getString(R.string.discovered_text, clusterSet.getExamplesNumber(), clusterSet.getSize())));
+            initRecyclerView(clusterSet);
         } else {
             discoveredTxt.setText("No cluster set available!");
         }

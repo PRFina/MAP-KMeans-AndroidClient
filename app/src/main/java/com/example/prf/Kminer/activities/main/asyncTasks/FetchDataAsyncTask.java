@@ -1,4 +1,4 @@
-package com.example.prf.Kminer.activities.main;
+package com.example.prf.Kminer.activities.main.asyncTasks;
 
 import android.content.Context;
 import android.os.AsyncTask;
@@ -26,7 +26,7 @@ import protocol.ResponseMessage;
  *
  */
 
-class FetchDataAsyncTask extends AsyncTask<String, Void, ResponseMessage> {
+public final class FetchDataAsyncTask extends AsyncTask<String, Void, ResponseMessage> {
     private static final String TAG = "FetchDiscoverAsyncTask";
 
     private Context context;

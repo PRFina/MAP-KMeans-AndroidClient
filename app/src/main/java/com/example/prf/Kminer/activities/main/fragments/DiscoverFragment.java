@@ -1,12 +1,10 @@
-package com.example.prf.Kminer.activities.main;
+package com.example.prf.Kminer.activities.main.fragments;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.prf.Kminer.R;
+import com.example.prf.Kminer.activities.main.asyncTasks.FetchDataAsyncTask;
 
 public class DiscoverFragment extends Fragment {
     // TODO: clean useless attributes

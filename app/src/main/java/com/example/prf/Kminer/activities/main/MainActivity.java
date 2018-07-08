@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.example.prf.Kminer.R;
+import com.example.prf.Kminer.activities.main.fragments.DiscoverFragment;
+import com.example.prf.Kminer.activities.main.fragments.ReadFragment;
 
 
 /**

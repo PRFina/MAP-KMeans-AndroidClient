@@ -36,13 +36,11 @@ public final class ClustersRecyclerViewAdapter extends RecyclerView.Adapter<Clus
     private ClusterSet clusters;
     private Context context;
 
-
     public ClustersRecyclerViewAdapter(ClusterSet clusters, Context ctx) {
         this.clusters = clusters;
         context = ctx;
 
     }
-
 
     @NonNull
     @Override
