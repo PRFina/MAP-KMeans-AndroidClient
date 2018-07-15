@@ -16,7 +16,7 @@ import com.example.prf.Kminer.activities.main.fragments.ReadFragment;
 
 
 /**
- * This is the Kminer's main activity.
+ * This is the com.prfsc.Kminer's main activity.
  *
  * The logic is delegated to the relate Fragments
  */

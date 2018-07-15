@@ -8,7 +8,6 @@ import org.json.JSONTokener;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.jar.Attributes;
 
 /**
  * This class models a collection of {@link com.example.prf.Kminer.models.Cluster}.
