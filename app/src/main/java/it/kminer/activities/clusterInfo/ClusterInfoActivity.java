@@ -27,20 +27,28 @@ import java.util.Locale;
  * from {@link ClusterSet#getAttributes()} as serializable extra
  *
  */
-public class gitClusterInfoActivity extends AppCompatActivity {
+public class ClusterInfoActivity extends AppCompatActivity {
+
+    /**
+     * Framework method called on create lifecycle state to setup UI components.
+     *
+     * @param savedInstanceState previous saved bundle
+     */
+
+    private Cluster cluster;
+    private List<String> attributes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cluster);
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(R.string.title_actionBar_clusterInfo);
 
-
-        Intent intent = this.getIntent();
-        Cluster cluster = (Cluster) intent.getSerializableExtra("cluster");
-        List<String> attributes = (List<String>) intent.getSerializableExtra("attributes");
+        // Retrieving intent data
+        Intent intent = getIntent();
+        cluster = (Cluster) intent.getSerializableExtra("cluster");
+        attributes = (List<String>) intent.getSerializableExtra("attributes");
 
         if(cluster != null && attributes != null){
 
@@ -58,8 +66,10 @@ public class gitClusterInfoActivity extends AppCompatActivity {
 
             // Examples list
             Collections.sort(cluster.getExamples());
-            RecyclerView tableExamplesRecyclerView = findViewById(R.id.activity_cluster_detail_recyclerView_tableExamples);
-            TableExamplesRecyclerAdapter examplesAdapter = new TableExamplesRecyclerAdapter(this,
+            RecyclerView tableExamplesRecyclerView =
+                    findViewById(R.id.activity_cluster_detail_recyclerView_tableExamples);
+            TableExamplesRecyclerAdapter examplesAdapter =
+                    new TableExamplesRecyclerAdapter(this,
                     cluster);
             tableExamplesRecyclerView.setHasFixedSize(true);
             tableExamplesRecyclerView.setAdapter(examplesAdapter);
@@ -69,7 +79,8 @@ public class gitClusterInfoActivity extends AppCompatActivity {
             avgDistance.setText( String.format(Locale.US,"%.2f", cluster.getAvgDistance()) );
         }
         else {
-            Snackbar.make(findViewById(R.id.activity_cluster_detail_root),"Can't retrieve data",Snackbar.LENGTH_LONG).show();
+            Snackbar.make(findViewById(R.id.activity_cluster_detail_root),
+                    "Can't retrieve data",Snackbar.LENGTH_LONG).show();
         }
 
     }
