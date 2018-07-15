@@ -16,9 +16,6 @@ import com.example.prf.Kminer.activities.main.asyncTasks.FetchDataAsyncTask;
 
 
 public class ReadFragment extends Fragment {
-    private static final String ARG_PARAM1 = "param1";
-    private String mParam1;
-
     // UI
     private View view;
     private TextView tableTxt;
@@ -31,18 +28,7 @@ public class ReadFragment extends Fragment {
 
     public static ReadFragment newInstance(String param1) {
        ReadFragment fragment = new ReadFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-        }
+       return fragment;
     }
 
     @Override

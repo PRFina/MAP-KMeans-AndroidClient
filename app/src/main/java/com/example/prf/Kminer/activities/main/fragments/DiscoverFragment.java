@@ -15,20 +15,12 @@ import com.example.prf.Kminer.R;
 import com.example.prf.Kminer.activities.main.asyncTasks.FetchDataAsyncTask;
 
 public class DiscoverFragment extends Fragment {
-    // TODO: clean useless attributes
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private String mParam1;
-    private View view;
 
     // UI
+    private View view;
     private TextView tableTxt;
     private TextView clustersTxt;
     private Button mineBtn;
-
-
-
-
 
     public DiscoverFragment() {
         // Required empty public constructor
@@ -37,20 +29,10 @@ public class DiscoverFragment extends Fragment {
 
     public static DiscoverFragment newInstance(String param1) {
         DiscoverFragment fragment = new DiscoverFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        fragment.setArguments(args);
+
         return fragment;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -22,7 +22,7 @@ public class ClustersActivity extends AppCompatActivity {
     private static final String TAG = "ClustersActivity";
 
     /**
-     * Framework method called on create lifecycle state to setup the UI.
+     * Framework method called on create lifecycle state to setup UI components.
      *
      * @param savedInstanceState previous saved bundle
      */
@@ -31,10 +31,10 @@ public class ClustersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clusters);
 
-        //Retrieve clusterSet insyance from incoming intent
+        // Retrieve clusterSet instance from incoming intent
         ClusterSet clusterSet = (ClusterSet) this.getIntent().getSerializableExtra("clusters");
 
-        //UI setup
+        // UI setup
         TextView discoveredTxt = findViewById(R.id.showclusters_txt_discovered);
         if(clusterSet != null) {
             discoveredTxt.setText(Html.fromHtml(getString(R.string.discovered_text, clusterSet.getExamplesNumber(), clusterSet.getSize())));
