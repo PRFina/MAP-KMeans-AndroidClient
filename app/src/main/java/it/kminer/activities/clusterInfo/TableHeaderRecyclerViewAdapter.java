@@ -1,4 +1,4 @@
-package com.example.prf.Kminer.activities.clusterInfo;
+package it.kminer.activities.clusterInfo;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.prf.Kminer.R;
+import it.kminer.R;
 
 import java.util.List;
 

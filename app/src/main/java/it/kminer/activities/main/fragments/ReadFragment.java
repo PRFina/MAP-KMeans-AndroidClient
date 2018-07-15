@@ -1,4 +1,4 @@
-package com.example.prf.Kminer.activities.main.fragments;
+package it.kminer.activities.main.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,8 +11,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.prf.Kminer.R;
-import com.example.prf.Kminer.activities.main.asyncTasks.FetchDataAsyncTask;
+import it.kminer.R;
+import it.kminer.activities.main.asyncTasks.FetchDataAsyncTask;
 
 
 public class ReadFragment extends Fragment {

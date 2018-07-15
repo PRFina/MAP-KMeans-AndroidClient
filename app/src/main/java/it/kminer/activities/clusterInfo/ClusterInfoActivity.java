@@ -1,4 +1,4 @@
-package com.example.prf.Kminer.activities.clusterInfo;
+package it.kminer.activities.clusterInfo;
 
 
 import android.content.Intent;
@@ -8,9 +8,9 @@ import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
-import com.example.prf.Kminer.R;
-import com.example.prf.Kminer.models.Cluster;
-import com.example.prf.Kminer.models.ClusterSet;
+import it.kminer.R;
+import it.kminer.models.Cluster;
+import it.kminer.models.ClusterSet;
 
 
 import java.util.Collections;
@@ -22,12 +22,12 @@ import java.util.Locale;
  * This activity show a list of examples and a list of attributes
  * using a RecyclerView and a custom adapter.
  * This activity must receive in the incoming intent Bundle
- * a {@link com.example.prf.Kminer.models.Cluster}
+ * a {@link it.kminer.models.Cluster}
  * instance and a list of strings retrieved
  * from {@link ClusterSet#getAttributes()} as serializable extra
  *
  */
-public class ClusterInfoActivity extends AppCompatActivity {
+public class gitClusterInfoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

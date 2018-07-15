@@ -1,4 +1,4 @@
-package com.example.prf.Kminer.activities.main;
+package it.kminer.activities.main;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -10,7 +10,7 @@ import android.support.design.widget.Snackbar;
 import android.util.Log;
 import android.view.View;
 
-import com.example.prf.Kminer.R;
+import it.kminer.R;
 
 public class ConnectivityReceiver extends BroadcastReceiver {
 

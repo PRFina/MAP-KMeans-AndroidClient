@@ -1,11 +1,11 @@
-package com.example.prf.Kminer.activities.main.asyncTasks;
+package it.kminer.activities.main.asyncTasks;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 
-import com.example.prf.Kminer.activities.clusters.ClustersActivity;
-import com.example.prf.Kminer.models.ClusterSet;
+import it.kminer.activities.clusters.ClustersActivity;
+import it.kminer.models.ClusterSet;
 
 
 public final class ParseJsonAsyncTask extends AsyncTask<String, Void, ClusterSet> {

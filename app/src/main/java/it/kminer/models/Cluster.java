@@ -1,4 +1,4 @@
-package com.example.prf.Kminer.models;
+package it.kminer.models;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This class models a collection of data {@link com.example.prf.Kminer.models.Example}.
+ * This class models a collection of data {@link it.kminer.models.Example}.
  * In this context,a cluster contains:
  * <ul>
  *     <li> A list of data examples <li>

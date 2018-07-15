@@ -10,4 +10,4 @@
  * in nested packages adapters, async tasks, fragments, etc...
  * </p>
  */
-package com.example.prf.Kminer.activities;
+package it.kminer.activities;

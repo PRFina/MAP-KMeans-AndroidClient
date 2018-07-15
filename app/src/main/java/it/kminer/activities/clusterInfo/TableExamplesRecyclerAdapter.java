@@ -1,4 +1,4 @@
-package com.example.prf.Kminer.activities.clusterInfo;
+package it.kminer.activities.clusterInfo;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -8,9 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.prf.Kminer.R;
-import com.example.prf.Kminer.models.Cluster;
-import com.example.prf.Kminer.models.Example;
+import it.kminer.R;
+import it.kminer.models.Cluster;
+import it.kminer.models.Example;
 
 public class TableExamplesRecyclerAdapter extends RecyclerView.Adapter<TableExamplesRecyclerAdapter.ViewHolder> {
 

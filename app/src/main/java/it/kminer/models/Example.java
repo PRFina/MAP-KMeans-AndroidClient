@@ -1,4 +1,4 @@
-package com.example.prf.Kminer.models;
+package it.kminer.models;
 
 import android.support.annotation.NonNull;
 

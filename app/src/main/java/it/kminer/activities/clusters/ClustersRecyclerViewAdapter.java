@@ -1,4 +1,4 @@
-package com.example.prf.Kminer.activities.clusters;
+package it.kminer.activities.clusters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,23 +10,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.prf.Kminer.R;
-import com.example.prf.Kminer.activities.clusterInfo.ClusterInfoActivity;
-import com.example.prf.Kminer.models.Cluster;
-import com.example.prf.Kminer.models.ClusterSet;
+import it.kminer.R;
+import it.kminer.activities.clusterInfo.ClusterInfoActivity;
+import it.kminer.models.Cluster;
+import it.kminer.models.ClusterSet;
 
 import java.io.Serializable;
 
 /**
  * Class that extends and implement the RecyclerView adapter.
- * This class helps to bind {@link com.example.prf.Kminer.models.ClusterSet}
+ * This class helps to bind {@link it.kminer.models.ClusterSet}
  * model to the inflated UI list provided by RecyclerView.
  *<p>
  * For each item in the clusters' list, an OnClickListener is attached to it, so
  * when user click on it new
- * {@link com.example.prf.Kminer.activities.clusterInfo.ClusterInfoActivity}
+ * {@link it.kminer.activities.clusterInfo.ClusterInfoActivity}
  * will be started with an intent that contains as bundle a single
- * {@link com.example.prf.Kminer.models.Cluster} instance.
+ * {@link it.kminer.models.Cluster} instance.
  *</p>
  */
 public final class ClustersRecyclerViewAdapter extends RecyclerView.Adapter<ClustersRecyclerViewAdapter.ViewHolder>{

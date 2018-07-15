@@ -1,4 +1,4 @@
-package com.example.prf.Kminer.activities.clusters;
+package it.kminer.activities.clusters;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,14 +7,14 @@ import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.widget.TextView;
 
-import com.example.prf.Kminer.R;
-import com.example.prf.Kminer.models.ClusterSet;
+import it.kminer.R;
+import it.kminer.models.ClusterSet;
 
 /**
  * Activity for showing the cluster-set content as list.
  *
  * This activity show a list of clusters using a RecyclerView and a custom adapter.
- * This activity must receive a {@link com.example.prf.Kminer.models.ClusterSet}
+ * This activity must receive a {@link it.kminer.models.ClusterSet}
  * instance in the incoming intent Bundle
  */
 public class ClustersActivity extends AppCompatActivity {

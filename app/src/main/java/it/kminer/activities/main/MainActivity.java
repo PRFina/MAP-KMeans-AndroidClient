@@ -1,4 +1,4 @@
-package com.example.prf.Kminer.activities.main;
+package it.kminer.activities.main;
 
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
@@ -10,9 +10,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.example.prf.Kminer.R;
-import com.example.prf.Kminer.activities.main.fragments.DiscoverFragment;
-import com.example.prf.Kminer.activities.main.fragments.ReadFragment;
+import it.kminer.R;
+import it.kminer.activities.main.fragments.DiscoverFragment;
+import it.kminer.activities.main.fragments.ReadFragment;
 
 
 /**

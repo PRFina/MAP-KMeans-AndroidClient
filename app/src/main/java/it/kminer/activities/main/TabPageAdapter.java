@@ -1,4 +1,4 @@
-package com.example.prf.Kminer.activities.main;
+package it.kminer.activities.main;
 
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
