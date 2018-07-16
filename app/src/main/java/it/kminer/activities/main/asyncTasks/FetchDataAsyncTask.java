@@ -1,7 +1,9 @@
 package it.kminer.activities.main.asyncTasks;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
 import android.util.Log;
 import android.view.View;
@@ -29,18 +31,22 @@ import protocol.ResponseMessage;
 public final class FetchDataAsyncTask extends AsyncTask<String, Void, ResponseMessage> {
     private static final String TAG = "FetchDiscoverAsyncTask";
 
+    private String serverAddress;
+    private int serverPort;
+
     private Context context;
     private View rootView;
 
     public FetchDataAsyncTask(Context context, View rootView) {
         this.context = context;
         this.rootView = rootView;
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        serverAddress = prefs.getString("server_address","10.0.2.2");
+        serverPort = Integer.parseInt(prefs.getString("server_port","9999"));
     }
 
     @Override
     protected ResponseMessage doInBackground(String... strings) {
-        String serverAddress = context.getString(R.string.server_address);
-        int serverPort = Integer.parseInt(context.getString(R.string.server_port));
 
         RequestMessage req;
         ResponseMessage resp = null;

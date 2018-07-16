@@ -1,5 +1,6 @@
 package it.kminer.activities.main;
 
+import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.support.design.widget.TabLayout;
@@ -9,10 +10,13 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import it.kminer.R;
 import it.kminer.activities.main.fragments.DiscoverFragment;
 import it.kminer.activities.main.fragments.ReadFragment;
+import it.kminer.activities.settings.SettingsActivity;
 
 
 /**
@@ -52,8 +56,13 @@ public class MainActivity extends AppCompatActivity {
         registerReceiver( connectivityReceiver,
                 new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
 
-        Log.d(TAG,"onCreate() called");
-
+        Button settingsBtn = findViewById(R.id.activity_main_btn_settings);
+        settingsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+            }
+        });
     }
 
 

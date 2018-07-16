@@ -12,6 +12,10 @@ import it.kminer.R;
 import it.kminer.models.Cluster;
 import it.kminer.models.Example;
 
+/**
+ * This class extends and implements a RecyclerView Adapter to show a list of
+ * {@link it.kminer.models.Example}
+ */
 public class TableExamplesRecyclerAdapter extends RecyclerView.Adapter<TableExamplesRecyclerAdapter.ViewHolder> {
 
     private Context context;
@@ -44,7 +48,7 @@ public class TableExamplesRecyclerAdapter extends RecyclerView.Adapter<TableExam
         return cluster.getExamples().size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder{
         private TextView example;
         private TextView distance;
 

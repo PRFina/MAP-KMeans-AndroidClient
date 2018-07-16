@@ -12,17 +12,16 @@
     <string name="fragment_read_tab_title">Discover</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="title_activity_main">ActivityMain</string>
 
     <!-- Action Bar -->
     <string name="title_actionBar_clusters">Clusters</string>
     <string name="title_actionBar_clusterInfo">Cluster Stats</string>
+    <string name="title_actionBar_settings">K-Miner Settings</string>
 
     <!-- Errors -->
     <string name="error_noNetwork"> You are not connected to any network, please connect to</string>
 
-    <string name="server_address">10.0.2.2</string>
-    <string name="server_port">9999</string>
 
 </resources>
