@@ -11,6 +11,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -66,14 +68,6 @@ public class MainActivity extends AppCompatActivity {
         registerReceiver( connectivityReceiver,
                 new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
 
-        // Start settings activity
-        Button settingsBtn = findViewById(R.id.activity_main_btn_settings);
-        settingsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, SettingsActivity.class));
-            }
-        });
     }
 
 
@@ -92,6 +86,24 @@ public class MainActivity extends AppCompatActivity {
             registerReceiver( connectivityReceiver,
                     new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
         }
+    }
+
+    // create an action bar button
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.action_bar_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    // handle button activities
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.settings_button) {
+            startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     /**
