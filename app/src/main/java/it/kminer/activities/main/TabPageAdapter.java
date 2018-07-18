@@ -5,6 +5,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+/**
+ * Helper class that extends a FragmentPagerAdapter to help
+ * implementing tab layout.
+ */
 public class TabPageAdapter extends FragmentPagerAdapter {
     private final String[] pagesTitles;
     private final Fragment[] fragments;

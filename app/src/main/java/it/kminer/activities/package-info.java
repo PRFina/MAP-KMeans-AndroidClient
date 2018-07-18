@@ -1,13 +1,13 @@
 /**
- * This package provides classes and sub-packeges
+ * This package provides classes and sub-packages
  * for defining the app activities
  *
  * <p>
  *     Following the android community best practices,
- * the package shows an "activity-centric" structure:
+ * the package shows an "activity-based" structure:
  * every activity has the own package in which is defined
- * the activity class and it dependencies clearly separated
- * in nested packages adapters, async tasks, fragments, etc...
+ * the activity class and its dependencies separated
+ * in nested packages like adapters, async tasks, fragments, etc...
  * </p>
  */
 package it.kminer.activities;

@@ -21,19 +21,12 @@ import protocol.ResponseMessage;
 
 /**
  * This class execute an async task to retrieve data from server.
- *
- * This class use RequestMessage and ResponseMessage to communicate with server
- *
- * In a "chainable way", the onPostExecute method call another Async tack to parse the json response
- *
+ * This class use {@link protocol} classes for client-server communication.
  */
-
 public final class FetchDataAsyncTask extends AsyncTask<String, Void, ResponseMessage> {
     private static final String TAG = "FetchDiscoverAsyncTask";
-
     private String serverAddress;
     private int serverPort;
-
     private Context context;
     private View rootView;
 
@@ -45,6 +38,11 @@ public final class FetchDataAsyncTask extends AsyncTask<String, Void, ResponseMe
         serverPort = Integer.parseInt(prefs.getString("server_port","9999"));
     }
 
+    /**
+     * Send request to the server
+     * @param strings request parameters
+     * @return a  response message sent from server
+     */
     @Override
     protected ResponseMessage doInBackground(String... strings) {
 
@@ -52,9 +50,9 @@ public final class FetchDataAsyncTask extends AsyncTask<String, Void, ResponseMe
         ResponseMessage resp = null;
 
         try (
-                Socket socket = new Socket(serverAddress, serverPort);
-                ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
-                ObjectInputStream in = new ObjectInputStream(socket.getInputStream())
+            Socket socket = new Socket(serverAddress, serverPort);
+            ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
+            ObjectInputStream in = new ObjectInputStream(socket.getInputStream())
         ) {
             req = new RequestMessage(MessageType.valueOf(strings[0])); //Get MessageType enum value from parameter
 
@@ -73,6 +71,12 @@ public final class FetchDataAsyncTask extends AsyncTask<String, Void, ResponseMe
         return resp;
     }
 
+    /**
+     * Start a {@link it.kminer.activities.main.asyncTasks.ParseJsonAsyncTask}
+     * with json data extracted from the server response.
+     *
+     * @param result the server response
+     */
     @Override
     protected void onPostExecute(ResponseMessage result) {
         super.onPostExecute(result);

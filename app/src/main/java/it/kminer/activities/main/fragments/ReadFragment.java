@@ -14,7 +14,14 @@ import android.widget.TextView;
 import it.kminer.R;
 import it.kminer.activities.main.asyncTasks.FetchDataAsyncTask;
 
-
+/**
+ * This fragment is used to handle the UI views when user
+ * wants to retrieve a stored KMiner instance on server.
+ * When user click on the button a new
+ * {@link it.kminer.activities.main.asyncTasks}
+ * is started to send ui values to the server.
+ *
+ */
 public class ReadFragment extends Fragment {
     // UI
     private View view;

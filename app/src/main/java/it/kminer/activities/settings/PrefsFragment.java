@@ -9,7 +9,8 @@ import android.support.v4.app.Fragment;
 import it.kminer.R;
 
 /**
- * A simple {@link Fragment} subclass.
+ * This fragment extends PreferenceFragment to
+ * automatically handle app preferences.
  */
 public class PrefsFragment extends PreferenceFragment {
 

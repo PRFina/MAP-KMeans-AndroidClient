@@ -14,6 +14,14 @@ import android.widget.TextView;
 import it.kminer.R;
 import it.kminer.activities.main.asyncTasks.FetchDataAsyncTask;
 
+/**
+ * This fragment is used to handle the UI views when user
+ * wants to run a new KMiner instance on a stored data-set.
+ * When user click on the button a new
+ * {@link it.kminer.activities.main.asyncTasks}
+ * is started to send ui values to the server.
+ *
+ */
 public class DiscoverFragment extends Fragment {
 
     // UI
@@ -64,6 +72,10 @@ public class DiscoverFragment extends Fragment {
         });
     }
 
+    /**
+     * helper method to validate ui fields
+     * @return true if one of the two fields are empty
+     */
     private boolean fieldsAreEmpty(){
         return tableTxt.getText().toString().isEmpty() ||
                 clustersTxt.getText().toString().isEmpty();

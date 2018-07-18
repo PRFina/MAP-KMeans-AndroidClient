@@ -1,5 +1,6 @@
 package it.kminer.activities.main;
 
+import android.content.BroadcastReceiver;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
@@ -20,14 +21,23 @@ import it.kminer.activities.settings.SettingsActivity;
 
 
 /**
- * This is the com.prfsc.Kminer's main activity.
- *
- * The logic is delegated to the relate Fragments
+ * Activity for showing the main UI.
+ * <p>
+ * This activity delegates the working logic to the fragments contained in
+ * {@link it.kminer.activities.main.fragments}.
+ * The viewPager and tab layout component has been used to
+ * display fragments like "swipeable-pages".
+ * </p>
+ * <p>
+ *    This activity use a BroadcastReceiver component to check network connection
+ *    status before to begin any client-server communication.
+ * </p>
  */
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "ActivityMain";
     private ViewPager pager;
-    private ConnectivityReceiver connectivityReceiver;
+    private BroadcastReceiver connectivityReceiver;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -56,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         registerReceiver( connectivityReceiver,
                 new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
 
+        // Start settings activity
         Button settingsBtn = findViewById(R.id.activity_main_btn_settings);
         settingsBtn.setOnClickListener(new View.OnClickListener() {
             @Override

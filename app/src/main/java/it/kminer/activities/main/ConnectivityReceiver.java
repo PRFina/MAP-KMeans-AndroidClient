@@ -12,21 +12,25 @@ import android.view.View;
 
 import it.kminer.R;
 
+/**
+ * This class is used to check network connection status.
+ * The view instance injected in the constructor is used
+ * to display a snackbar message to the user.
+ */
 public class ConnectivityReceiver extends BroadcastReceiver {
 
     private View rootView;
+    private static final String TAG = "ConnectivityReceiver";
+
 
     public ConnectivityReceiver(View rootView) {
+
         this.rootView = rootView;
     }
-
-    private static final String TAG = "ConnectivityReceiver";
 
     @Override
     public void onReceive(Context context, Intent intent) {
         Bundle extras = intent.getExtras();
-
-
 
         if (extras != null) {
             ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);

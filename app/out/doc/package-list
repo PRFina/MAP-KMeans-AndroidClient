@@ -1,5 +1,8 @@
-com.prfsc.Kminer.activities.clusterInfo
-com.prfsc.Kminer.activities.clusters
-com.prfsc.Kminer.activities.main
-com.prfsc.Kminer.models
+it.kminer.activities.clusterInfo
+it.kminer.activities.clusters
+it.kminer.activities.main
+it.kminer.activities.main.asyncTasks
+it.kminer.activities.main.fragments
+it.kminer.activities.settings
+it.kminer.models
 protocol

@@ -5,6 +5,11 @@ import android.os.Bundle;
 
 import it.kminer.R;
 
+/**
+ * This activity is used to show app settings to user.
+ * The ui working logic is delegated to {
+ * @link it.kminer.activities.settings.PrefsFragment}
+ */
 public class SettingsActivity extends AppCompatActivity {
 
     @Override
